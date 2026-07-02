@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" prefWidth="750.0" prefHeight="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ucv.lab12.controller.EmpleadoController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <Label text="Gestión de Deudas Administrativas - UGEL Ilo" textFill="#1d3557">
+        <font>
+            <Font name="System Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="120.0"/>
+            <ColumnConstraints prefWidth="200.0"/>
+            <ColumnConstraints prefWidth="100.0"/>
+            <ColumnConstraints prefWidth="200.0"/>
+        </columnConstraints>
+
+        <children>
+            <Label text="Código Empleado:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="DNI Docente:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtDni" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+            <Label text="Nombres:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtNombres" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Apellidos:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtApellidos" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+            <Label text="Sueldo Básico (S/):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtSueldo" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Button text="Registrar Obligación" onAction="#handleGuardar" prefWidth="150.0" style="-fx-background-color: #457b9d; -fx-text-fill: white;" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        </children>
+    </GridPane>
+
+    <Separator/>
+
+    <TableView fx:id="tblEmpleados" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código"/>
+            <TableColumn fx:id="colDni" prefWidth="100.0" text="DNI"/>
+            <TableColumn fx:id="colApellidos" prefWidth="160.0" text="Apellidos"/>
+            <TableColumn fx:id="colNombres" prefWidth="160.0" text="Nombres"/>
+            <TableColumn fx:id="colSueldo" prefWidth="120.0" text="Sueldo Base (S/)"/>
+        </columns>
+    </TableView>
+</VBox>
